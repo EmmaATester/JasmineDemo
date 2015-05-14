@@ -1,0 +1,44 @@
+//this is the suite
+describe("Simple demo", function() {
+ 	var demo = new Demo();
+
+	beforeEach(function() {
+	jasmine.addMatchers({
+   
+
+      	toBeSetToHereItIs: function() {
+        return {
+                    compare: function (actual, expected) {
+                        return {
+                            pass: (actual) === "here it is"
+                         };
+                    }
+                };
+            }
+        });
+    });
+
+ //this is the spec
+  it("says hello world if an empty string is specified", function() {
+
+demo.displayThisPhrase();
+//toEqual is a matcher
+   expect(demo.phraseToDisplay).toEqual("Hello World");
+ });
+
+
+//the not and another matcher
+it("says hello world if an empty string is specified", function() {
+demo.displayThisPhrase();
+//toBeNull is a matcher  but also using not
+	expect(demo.phraseToDisplay).not.toBeNull();
+ });
+
+
+//using custom matcher
+it("is sets the display text to the value specified", function() {
+	demo.displayThisPhrase("here it is");
+
+	expect(demo.phraseToDisplay).toBeSetToHereItIs();
+ });
+});

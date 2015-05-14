@@ -1,0 +1,42 @@
+
+//this is the suite
+describe("Simple demo", function() {
+ 	var demo = new Demo();
+
+beforeEach(function() {
+	demo.displayThisPhrase();
+
+	this.addMatchers({
+      toBepreSettoHelloWorld: function() {
+         if((this.actual) === "Hello World"){
+		return true;
+		}
+	else {return false;
+		}
+      }
+});
+ //this is the spec
+  it("says hello world if an empty string is specified", function() {
+
+
+//toEqual is a matcher
+   expect(demo.phraseToDisplay).toEqual("Hello World");
+ });
+
+
+//the not and another matcher
+it("says hello world if an empty string is specified", function() {
+
+//toBeNull is a matcher  but also using not
+	expect(demo.phraseToDisplay).not.toBeNull();
+ });
+});
+
+
+this.addMatchers({
+	toBepreSettoHelloWorld: function() {
+         if((this.actual) === "Hello World"){
+		return true;
+		}
+	else {return false;
+		}

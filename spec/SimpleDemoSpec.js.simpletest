@@ -1,0 +1,24 @@
+
+//this is the suite
+describe("Simple demo", function() {
+ 	
+ 
+ //this is the spec
+  it("says hello world if an empty string is specified", function() {
+
+	var demo = new Demo();
+//toEqual is a matcher
+    demo.displayThisPhrase();
+	expect(demo.phraseToDisplay).toEqual("Hello World");
+ });
+
+
+//the not and another matcher
+it("says hello world if an empty string is specified", function() {
+
+	var demo = new Demo();
+//toBeNull is a matcher  but also using not
+    demo.displayThisPhrase();
+	expect(demo.phraseToDisplay).not.toBeNull();
+ });
+});
