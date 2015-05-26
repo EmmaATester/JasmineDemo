@@ -31,12 +31,3 @@ it("says hello world if an empty string is specified", function() {
 	expect(demo.phraseToDisplay).not.toBeNull();
  });
 });
-
-
-this.addMatchers({
-	toBepreSettoHelloWorld: function() {
-         if((this.actual) === "Hello World"){
-		return true;
-		}
-	else {return false;
-		}
